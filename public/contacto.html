@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <title>Contacto - Flux</title>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <!-- Fondo animado -->
+    <div class="animated-gradient-bg"></div>
+
+    <header class="bg-transparent w-full flex justify-between items-center px-10 py-2 relative z-10">
+        <a href="index.html">
+        <div class="flex items-center">
+            <img src="assets/images/logo.svg" alt="Logo de Flux" class="h-10 mx-2">
+            <h1 class="text-2xl font-bold text-white font-inter-bold">flux</h1>
+        </div>
+    </a>
+        <nav>
+            <ul class="flex space-x-20">
+                <li><a href="index.html" class="text-gray-300 hover:text-blue-400 text-2xl">X</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="text-center py-20 relative z-10">
+        <!-- Corregí el ID aquí -->
+        <h1 id="typewriter" class="text-5xl font-jetbrains mb-10"></h1>
+
+        <form action="#" method="POST" class="max-w-md mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+                <label for="name" class="block text-left mb-2 font-bold font-inter">Nombre:</label>
+                <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-left mb-2 font-bold font-inter">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white">
+            </div>
+
+            <div class="mb-4">
+                <label for="phone" class="block text-left mb-2 font-bold font-inter">Teléfono:</label>
+                <input type="text" id="phone" name="phone" required class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white">
+            </div>
+
+            <div class="mb-4">
+                <label for="message" class="block text-left mb-2 font-bold font-inter">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-300">Enviar Mensaje</button>
+        </form>
+    </main>
+
+    <footer class="bg-black text-center p-4 mt-10 font-inter relative z-10">
+        <p>© 2023 Flux. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.0.3/dist/index.umd.js"></script>
+    
+    <script>
+        // Efecto Typewriter para "Contáctanos"
+        new TypeIt("#typewriter", {
+            strings: ["Contáctanos"],
+            speed: 100, // Velocidad de escritura
+            waitUntilVisible: true, // Inicia cuando el texto es visible
+        }).go();
+    </script>
+</body>
+</html>

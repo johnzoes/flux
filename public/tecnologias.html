@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <title>Tecnologías Usadas - Flux</title>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <header class="bg-transparent w-full flex justify-between items-center px-10 py-2">
+        <div class="animated-gradient-bg"></div>
+
+        <div class="flex items-center">
+            <img src="assets/images/logo.svg" alt="Logo de Flux" class="h-10 mx-2">
+            <h1 class="text-2xl font-bold text-white font-inter-bold">flux</h1>
+        </div>
+
+        <nav>
+            <ul class="flex space-x-20">
+                <li><a href="index.html" class="text-gray-300 hover:text-blue-400 font-ligero">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="text-center py-20">
+        <h1 id="title" class="text-5xl font-jetbrains mb-10"></h1> <!-- Título con efecto de tipeo -->
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-10">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-1" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para Angular -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-2" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para Java -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-3" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para C# -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-4" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para Flutter -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-5" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para Dart -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-6" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para PHP -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-7" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para HTML -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-8" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para CSS -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-9" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para Laravel -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-10" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para JavaScript -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-11" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para WordPress -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-12" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para Vue.js -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-13" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para Tailwind -->
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
+                <h2 id="tech-14" class="text-xl font-bold font-ligero"></h2> <!-- Espacio para MySQL -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-center p-4 mt-10 font-inter">
+        <p>© 2023 Flux. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script de TypeIt para el tipado de tecnologías y el título -->
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.0.3/dist/index.umd.js"></script>
+    <script>
+        // Efecto de tipeo en el título "Tecnologías Usadas"
+        new TypeIt("#title", {
+            strings: ["Tecnologías Usadas"],
+            speed: 100,
+            loop: false,
+            waitUntilVisible: true,
+        }).go();
+
+        const technologies = [
+            { id: "#tech-1", name: "Angular" },
+            { id: "#tech-2", name: "Java" },
+            { id: "#tech-3", name: "C#" },
+            { id: "#tech-4", name: "Flutter" },
+            { id: "#tech-5", name: "Dart" },
+            { id: "#tech-6", name: "PHP" },
+            { id: "#tech-7", name: "HTML" },
+            { id: "#tech-8", name: "CSS" },
+            { id: "#tech-9", name: "Laravel" },
+            { id: "#tech-10", name: "JavaScript" },
+            { id: "#tech-11", name: "WordPress" },
+            { id: "#tech-12", name: "Vue.js" },
+            { id: "#tech-13", name: "Tailwind" },
+            { id: "#tech-14", name: "MySQL" }
+        ];
+
+        // Efecto de tipeo para cada tecnología
+        technologies.forEach(tech => {
+            new TypeIt(tech.id, {
+                strings: [tech.name],
+                speed: 100,
+                loop: false,
+                waitUntilVisible: true,
+            }).go();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Flux - Desarrollo de Software</title>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <img src="assets/videos/index-video.gif" alt="Fondo" class="gif-background">
+
+    <header class="bg-transparent w-full flex justify-between items-center px-10 py-2">
+        <div class="flex items-center">
+            <img src="assets/images/logo.svg" alt="Logo de Flux" class="h-10 mx-2">
+            <h1 class="text-2xl font-bold text-white font-inter-bold">flux</h1>
+        </div>
+
+        <nav>
+            <ul class="flex space-x-20">
+                <li><a href="#home" class="text-gray-300 hover:text-blue-400 font-inter">Inicio</a></li>
+                <li><a href="nosotros.html" class="text-gray-300 hover:text-blue-400 font-inter">Nosotros</a></li>
+                <li><a href="tecnologias.html" class="text-gray-300 hover:text-blue-400 font-inter">Tecnologias</a></li>
+                <li><a href="portafolio.html" class="text-gray-300 hover:text-blue-400 font-inter"></a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <ul>
+                <li><a href="contacto.html" class="text-gray-300 hover:text-blue-400 font-ligero">Contáctanos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="text-center py-20">
+            <h1 id="typewriter" class="text-5xl font-jetbrains">Impulsa tu negocio al futuro digital</h1>
+            <a href="contacto.html" class="mt-5 inline-block bg-transparent text-white font-bold py-2 px-4 rounded border border-white border-opacity-20 shadow-xl backdrop-filter backdrop-blur-lg hover:backdrop-blur-sm transition duration-300 ease-in-out font-ligero">
+                Contáctanos
+            </a>
+        </section>
+
+        <!-- Sección de servicios -->
+        <section id="services" class="text-center py-20">
+            <div class="flex justify-center space-x-20">
+                <div class="service-box bg-transparent bg-opacity-60 rounded-2xl shadow-xl backdrop-filter backdrop-blur-lg flex items-center justify-center" data-description="Ofrecemos soluciones web personalizadas para tu negocio.">
+                    <img src="assets/images/web.svg" alt="Desarrollo Web" class="service-img">
+                    <h2 class="text-xl font-bold">Desarrollo Web</h2>
+                </div>
+                <div class="service-box bg-transparent bg-opacity-60 rounded-2xl shadow-xl backdrop-filter backdrop-blur-lg flex items-center justify-center" data-description="Gestionamos y optimizamos tus bases de datos.">
+                    <img src="assets/images/db.svg" alt="Gestión de base de datos" class="service-img">
+                    <h2 class="text-xl font-bold">Gestión de base de datos</h2>
+                </div>
+                <div class="service-box bg-transparent bg-opacity-60 rounded-2xl shadow-xl backdrop-filter backdrop-blur-lg flex items-center justify-center" data-description="Brindamos soporte técnico eficiente para tí o tu negocio.">
+                    <img src="assets/images/technical-support.svg" alt="Soporte técnico" class="service-img">
+                    <h2 class="text-xl font-bold">Soporte técnico</h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-center p-4 mt-10 font-inter">
+        <p>© 2023 Flux. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.0.3/dist/index.umd.js"></script>
+    <script>
+        // Inicializar el efecto de escritura
+        new TypeIt("#typewriter", {
+            speed: 100,
+            waitUntilVisible: true,
+            afterComplete: function() {
+                document.getElementById("services").classList.remove("hidden");
+            }
+        }).go();
+
+
+        const serviceBoxes = document.querySelectorAll('.service-box');
+const externalElements = document.querySelectorAll('header, footer, .gif-background, #home'); // Incluye el fondo GIF también
+
+serviceBoxes.forEach(box => {
+    box.addEventListener('mouseenter', () => {
+        // Aplicar desenfoque a los elementos externos (header, footer, fondo de video)
+        externalElements.forEach(el => el.classList.add('blurred'));
+
+        // Remover desenfoque de la caja actual
+        box.classList.add('focused');
+
+        // Mostrar la descripción del servicio
+        let description = box.getAttribute('data-description');
+        let descriptionElement = document.createElement('p');
+        descriptionElement.classList.add('service-description');
+        descriptionElement.innerText = description;
+
+        // Asegurarnos de que la descripción solo se agregue una vez
+        if (!box.querySelector('.service-description')) {
+            box.appendChild(descriptionElement);
+        }
+
+        // Aplicar desenfoque a las otras cajas dentro del main
+        serviceBoxes.forEach(b => {
+            if (b !== box) b.classList.add('blurred-element');
+        });
+    });
+
+    box.addEventListener('mouseleave', () => {
+        // Quitar desenfoque de los elementos externos (header, footer, fondo de video)
+        externalElements.forEach(el => el.classList.remove('blurred'));
+
+        // Quitar desenfoque de las otras cajas
+        serviceBoxes.forEach(b => {
+            b.classList.remove('blurred-element');
+        });
+
+        // Quitar el foco de la caja actual
+        box.classList.remove('focused');
+
+        // Eliminar la descripción del servicio
+        let descriptionElement = box.querySelector('.service-description');
+        if (descriptionElement) {
+            descriptionElement.remove();
+        }
+    });
+});
+
+
+    </script>
+</body>
+</html>

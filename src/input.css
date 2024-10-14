@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hacemos que el body cubra toda la altura de la ventana */
+    margin: 0; /* Quitamos el margen por defecto del body */
+}
+
+header, main, footer {
+    z-index: 2; /* Estar por encima del GIF, pero por debajo del foco */
+    position: relative;
+}
+
+.gif-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+main {
+    flex: 1;
+}
+
+#services .service-box {
+    width: 80%;
+    max-width: 350px; /* Ajusta el tamaño máximo del contenedor */
+    height: 350px; /* Ajusta el tamaño del div */
+    padding: 20px;
+    margin-top: 20px; /* Aumenta la separación superior */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#services .service-box img {
+    width: 80px; /* Tamaño más grande del ícono */
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+#services .service-box h2 {
+    margin-top: 10px;
+    font-size: 1.5rem; /* Tamaño del texto */
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-in-out forwards;
+    opacity: 0; /* Inicialmente invisible */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Desenfoque en todos los elementos excepto el que tiene la clase .focused */
+.blurred {
+    filter: blur(10px); /* Desenfoque en los elementos externos como header, footer y el video */
+    transition: filter 0.5s ease-in-out;
+}
+
+/* Desenfoque en otras cajas de servicios */
+.blurred-element {
+    filter: blur(10px); /* Desenfoque en las otras cajas de servicios */
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Caja bajo el hover, sin desenfoque */
+.focused {
+    transform: scale(1.2); /* Aumenta el tamaño de la caja bajo el hover */
+    background-color: #0d1821;
+    z-index: 10;
+    filter: none; /* Sin desenfoque */
+    transition: transform 0.5s ease-in-out, background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row; /* Coloca el icono y el texto en línea */
+    align-items: center; /* Alinea verticalmente en el centro */
+}
+
+.focused img {
+    margin-right: 10px; /* Añade espacio entre el icono y el texto */
+}
+
+.focused h2 {
+    font-size: 2rem; /* Aumenta el tamaño del título al agrandar */
+}
+
+/* Descripción de los servicios, inicialmente oculta */
+.service-description {
+    display: none; /* Oculta la descripción inicialmente */
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Mostrar la descripción cuando la caja esté enfocada */
+.focused .service-description {
+    display: block; /* Mostrar la descripción cuando el box tiene la clase focused */
+    opacity: 1;
+    margin-left: 10px; /* Alinea la descripción debajo del título */
+}
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  #main-body {
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+  }
+  
+  .animated-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  #animated-subtext {
+    font-size: 1.25rem; /* Tamaño del texto más pequeño */
+    color: #C0C0C0; /* Color más claro para hacerlo discreto */
+    margin-top: 10px;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Animación de barrido de abajo hacia arriba */
+@keyframes backgroundSweep {
+    0% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: top;
+    }
+}

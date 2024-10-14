@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Montserrat Light';
+  src: url('../assets/fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Regular';
+  src: url('../assets/fonts/Inter/static/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter Regular';
+  src: url('../assets/fonts/Inter/static/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Puedes seguir agregando más variantes de las fuentes si es necesario */
